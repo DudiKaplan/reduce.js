@@ -26,9 +26,9 @@ function averageBy(arr) {
         return previous;
     }, { tT: 0, cT: 0, tE: 0, cE: 0, tG: 0, cG: 0 });
 
-    return [{ averageTeacherSsalary: tT / cT },
-    { averageEngineersSsalary: tE / cE },
-    { averageGardenersSsalary: tG / cG }];
+    return [{ averageTeachersSalary: tT / cT },
+    { averageEngineersSalary: tE / cE },
+    { averageGardenersSalary: tG / cG }];
 }
 
 console.log(averageBy(data));
