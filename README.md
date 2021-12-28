@@ -12,18 +12,18 @@ const data = [
 ]
 
 function averageBy(arr) {
-    const { tT, cT, tE, cE, tG, cG } = arr.reduce((a, b) => {
-        if (b.profession === 'Teacher') {
-            a.tT += b.salary;
-            a.cT++;
-        } else if (b.profession === 'Engineer') {
-            a.tE += b.salary;
-            a.cE++;
+    const { tT, cT, tE, cE, tG, cG } = arr.reduce((previous, current) => {
+        if (current.profession === 'Teacher') {
+            previous.tT += current.salary;
+            previous.cT++;
+        } else if (current.profession === 'Engineer') {
+            previous.tE += current.salary;
+            previous.cE++;
         } else {
-            a.tG += b.salary;
-            a.cG++;
+            previous.tG += current.salary;
+            previous.cG++;
         }
-        return a;
+        return previous;
     }, { tT: 0, cT: 0, tE: 0, cE: 0, tG: 0, cG: 0 });
 
     return [{ averageTeacherSsalary: tT / cT },
@@ -32,4 +32,5 @@ function averageBy(arr) {
 }
 
 console.log(averageBy(data));
+
 ```
